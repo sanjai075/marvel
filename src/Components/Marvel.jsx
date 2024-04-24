@@ -26,7 +26,9 @@ const Marvel = () => {
   return (
    <>
   {
-    (!item)? "": (
+    (!item)? <div className='min-h-screen flex justify-center'>
+      <div className=' mt-32'> <span className="loading loading-dots loading-lg  "></span></div>
+    </div>: (
         <div
         style={
             {
@@ -41,7 +43,7 @@ const Marvel = () => {
 
             }
         }
-        className={`flex flex-col h-screen  justify-around sm:flex-row md:items-center mt-3  `}>
+        className={`flex flex-col min-h-screen  justify-around sm:flex-row md:items-center mt-3 `}>
 
             <div className=' p-2 rounded-2xl md:w-[400px] '>
             <img className='rounded-2xl' src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt="" />

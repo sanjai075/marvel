@@ -26,8 +26,9 @@ const Marvel = () => {
   return (
    <>
   {
-    (!item)? <div className='min-h-screen flex justify-center'>
+    (!item)? <div className='  flex justify-center'>
       <div className=' mt-32'> <span className="loading loading-dots loading-lg  "></span></div>
+      <p></p>
     </div>: (
         <div
         style={

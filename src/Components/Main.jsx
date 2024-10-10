@@ -8,6 +8,7 @@ import marvel from "../../public/Images/marvel.jpg"
 import logo1 from "../../public/Images/marvellogo.png"
 import marve1 from "../../public/Images/marvelback.png"
 import navback from "../../public/Images/navback.jpg"
+import useDebounce from '../Hooks/useDebounce'
 
 
 const Main = () => {
@@ -17,7 +18,7 @@ const Main = () => {
   const [items,setItems]=useState()
   const [search,setSearch]=useState()
   const[loading,setLoading]=useState(false)
-  
+  const debouncedSearch = useDebounce(search,500)
 useEffect(()=>{
     const fetch=async()=>{
       setLoading(true)
@@ -30,7 +31,7 @@ useEffect(()=>{
       
     }
     fetch();
-  },[url])
+  },[debouncedSearch])
 
   
 console.log(items)
